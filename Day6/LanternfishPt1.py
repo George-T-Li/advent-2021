@@ -8,7 +8,7 @@ def lanternfish(days):
             tracker.append(fish_count(int(fish), days))
         for fish in lfish:
             count += tracker[int(fish)-1]
-    print(count)
+    return count
 
 def fish_count(n, days):
     l = [n]
@@ -25,4 +25,4 @@ def fish_count(n, days):
         l = new_l
     return len(l)
 
-#lanternfish(80) #373378
+#print(lanternfish(80)) #373378
