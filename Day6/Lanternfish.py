@@ -25,4 +25,4 @@ def fish_count(n, days):
         l = new_l
     return len(l)
 
-#print(lanternfish(80)) #373378
+print(lanternfish(80)) #373378
