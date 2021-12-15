@@ -26,12 +26,3 @@ def fish_count(n, days):
     return len(l)
 
 #lanternfish(80) #373378
-#lanternfish(256)
-
-"""
-    2d array
-    Dimension 1: age of fish = 'i'
-    Dimension 2: # of fish on day 'j'
-    ie: answer the question "if fish is "i" days old on day 1, how many fish will there be on day 'j'?
-    really only need 8 days of data to be 'memoized', then just get valule from memoized list
-"""
