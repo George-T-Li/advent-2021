@@ -1,0 +1,37 @@
+Packet:
+- version -> 3 bits
+- type ID -> 3 bits
+- rest
+
+If 'type ID' = '100' (4b): Literal value
+- length is a multiple of 4
+- broken into groups of 4 + 1 bits
+    each group has an additional prefix, either 1 or 0
+    0 if it's the last group, 1 otherwise
+
+If 'type id' != '100: Operator
+- length type ID -> 0 or 1
+    0 means next 15 bits are a number representing the total length of the subpackets of this packet
+    1 means next 11 bits are a number representing the total number of subpackets of this packet
+
+
+Examples:
+EE00D40C823060
+001 110 0 000000000011011
+    110 100 01010
+    010 100 10001 00100 (0000000)
+
+8A004A801A8002F478
+100 010 1 00000000001 
+	001 010 1 00000000001 
+		101 010 0 000000000001011 
+			110 100 01111 (000)
+
+620080001611562C8802118E34
+011 000 1 00000000010
+	000 000 0 000000000010110
+		000 100 01010
+		101 100 01011
+	001 000 1 00000000010
+		000 100 01100
+		011 100 01101 00
