@@ -6,10 +6,6 @@ def main():
     print(f'sum versions = {sum(versions)}')
 
 def parse(packet):
-    print(f'{packet = }')
-    if packet == None:
-        return sum(versions)
-
     version = int(packet[:3], 2)
     type_ID = int(packet[3:6], 2)
     rest = packet[6:]
