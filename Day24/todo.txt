@@ -1,0 +1,5 @@
+1. parse input
+2. create ALU
+3. set up 14-digit permutations
+4. run set of permutations on the input through ALU
+5. determine largest 14-digit permutation
